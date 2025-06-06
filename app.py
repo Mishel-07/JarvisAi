@@ -8,9 +8,10 @@ from typing import Dict, Any
 import time
 from fastapi import FastAPI, Request
 import os
+from os import environ
 import pytz
 
-TOKEN = os.getenv("TOKEN", "")
+TOKEN = environ.get("TOKEN", "")
 app = FastAPI()
 chat_memory = {}
 
